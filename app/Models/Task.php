@@ -10,4 +10,15 @@ class Task extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $fillable = ['title','description','long_description','completed'];
+   
+    public function toggleComplete(){
+        $this->completed = !$this->completed;
+        $this->save();
+    }
+    // protected $fillable = ['tablodaki bütün alanların isimleri veri gönderilecek olan']
+    // protected $guarded = [];
+    
+    //protected $fillable = ['title'];
 }
