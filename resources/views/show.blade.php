@@ -6,7 +6,7 @@
 
 <div class="mb-4 mt-4">
 <a href="{{ route('tasks.index') }}" 
-class = "font-medium text-gray-700 underline underline-offset-4  "> ← Go back to the task list</a>
+class = "link"> ← Go back to the task list</a>
 </div>
 
 <p class ="mb-4 text-slate-700 ">{{$task->description}}</p>
@@ -26,7 +26,7 @@ class = "font-medium text-gray-700 underline underline-offset-4  "> ← Go back 
     @endif
 </p>
 
-<div>
+<div class="flex gap-2">
     <a href="{{ route('tasks.edit' , ['task' => $task]) }}"
     class="btn"
     >Edit ✎ </a>

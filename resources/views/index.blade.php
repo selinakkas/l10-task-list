@@ -5,12 +5,12 @@
 @section('content')
 
     <nav class="mb-4 mt-4">
-        <a href="{{ route('tasks.create') }}" class = "font-medium text-gray-700 underline decoration-double underline-offset-4  ">Add Task</a>
+        <a href="{{ route('tasks.create') }}" class = "link">Add Task</a>
     </nav>
     @forelse ($tasks as $task)
     <!-- @dump($task) -->
         <div>
-            <a href="{{ route('tasks.show', ['task'=> $task->id]) }}" class="line-through">{{ $task->title }}</a>
+            <a href="{{ route('tasks.show', ['task'=> $task->id]) }}" class="{{$task->completed ? 'line-through text-green-500' : null}}">{{ $task->title }}</a>
            
         </div>
     @empty
